@@ -7,6 +7,7 @@ import { Container, Title, SubTitle } from './App.styled';
 import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
+
 import {
   selectContacts,
   selectError,
@@ -25,10 +26,10 @@ export const App = () => {
 
   return (
     <Container>
+      {isLoading && !error && <p>Request in progress...</p>}
       <Title>Phonebook</Title>
       <ContactForm />
       <SubTitle>Contacts</SubTitle>
-      {isLoading && !error && <p>Request in progress...</p>}
       {contacts.length > 0 ? (
         <Filter />
       ) : (

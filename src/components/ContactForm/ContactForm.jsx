@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
 import { Form, Label, Button, Input } from './ContactForm.styled';
-
+import { selectContacts } from '../../redux/selectors';
 import { useSelector, useDispatch } from 'react-redux';
 import { addContact } from '../../redux/operations';
 
@@ -9,8 +9,8 @@ const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  const contacts = useSelector(state => state.contacts.items);
-  console.log(contacts);
+  const contacts = useSelector(selectContacts);
+  // console.log(contacts);
   const dispatch = useDispatch();
   const nameInputId = nanoid();
   const numberInputId = nanoid();
