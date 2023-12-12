@@ -70,7 +70,6 @@ const ContactForm = () => {
           required
         />
       </Label>
-
       <Button type="submit">Add contact</Button>
     </Form>
   );

@@ -9,6 +9,7 @@ const ContactList = () => {
   const dispatch = useDispatch();
   const filteredContacts = useSelector(selectFilteredContacts);
   // console.log(filteredContacts);
+
   return (
     <List>
       {filteredContacts.map(({ id, name, number }) => (

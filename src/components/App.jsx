@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchContacts } from '../redux/operations';
+import { Toaster } from 'react-hot-toast';
 
 import { Container, Title, SubTitle } from './App.styled';
 import ContactForm from './ContactForm/ContactForm';
@@ -36,6 +37,7 @@ export const App = () => {
         <p>Your phonebook is empty. Add first contact!</p>
       )}
       {contacts.length > 0 && <ContactList />}
+      <Toaster />
     </Container>
   );
 };
